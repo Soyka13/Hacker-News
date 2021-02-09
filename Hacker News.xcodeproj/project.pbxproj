@@ -13,6 +13,10 @@
 		924045A7253AE58000EF3957 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 924045A6253AE58000EF3957 /* Assets.xcassets */; };
 		924045AA253AE58000EF3957 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 924045A9253AE58000EF3957 /* Preview Assets.xcassets */; };
 		924045AD253AE58000EF3957 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 924045AB253AE58000EF3957 /* LaunchScreen.storyboard */; };
+		92458D4D253AF459002C65F5 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92458D4C253AF459002C65F5 /* WebView.swift */; };
+		926161E0253AEA58005E5324 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926161DF253AEA58005E5324 /* NetworkManager.swift */; };
+		926161E5253AEC02005E5324 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926161E4253AEC02005E5324 /* PostData.swift */; };
+		926161EB253AF0B0005E5324 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926161EA253AF0B0005E5324 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,11 @@
 		924045A9253AE58000EF3957 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		924045AC253AE58000EF3957 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		924045AE253AE58000EF3957 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92458D4C253AF459002C65F5 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		92458D4F253AF5E8002C65F5 /* Hacker News.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Hacker News.entitlements"; sourceTree = "<group>"; };
+		926161DF253AEA58005E5324 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		926161E4253AEC02005E5324 /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
+		926161EA253AF0B0005E5324 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +65,11 @@
 		9240459F253AE57E00EF3957 /* Hacker News */ = {
 			isa = PBXGroup;
 			children = (
+				92458D4F253AF5E8002C65F5 /* Hacker News.entitlements */,
 				924045A0253AE57F00EF3957 /* AppDelegate.swift */,
 				924045A2253AE57F00EF3957 /* SceneDelegate.swift */,
-				924045A4253AE57F00EF3957 /* ContentView.swift */,
+				926161E7253AF09C005E5324 /* Views */,
+				926161E2253AEBD6005E5324 /* Models */,
 				924045A6253AE58000EF3957 /* Assets.xcassets */,
 				924045AB253AE58000EF3957 /* LaunchScreen.storyboard */,
 				924045AE253AE58000EF3957 /* Info.plist */,
@@ -73,6 +84,25 @@
 				924045A9253AE58000EF3957 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		926161E2253AEBD6005E5324 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				926161DF253AEA58005E5324 /* NetworkManager.swift */,
+				926161E4253AEC02005E5324 /* PostData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		926161E7253AF09C005E5324 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				924045A4253AE57F00EF3957 /* ContentView.swift */,
+				926161EA253AF0B0005E5324 /* DetailView.swift */,
+				92458D4C253AF459002C65F5 /* WebView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,9 +175,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				926161E5253AEC02005E5324 /* PostData.swift in Sources */,
+				926161EB253AF0B0005E5324 /* DetailView.swift in Sources */,
+				926161E0253AEA58005E5324 /* NetworkManager.swift in Sources */,
 				924045A1253AE57F00EF3957 /* AppDelegate.swift in Sources */,
 				924045A3253AE57F00EF3957 /* SceneDelegate.swift in Sources */,
 				924045A5253AE57F00EF3957 /* ContentView.swift in Sources */,
+				92458D4D253AF459002C65F5 /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +320,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Hacker News/Hacker News.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Hacker News/Preview Content\"";
 				DEVELOPMENT_TEAM = L9295BF929;
@@ -297,6 +333,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.olena.stepaniuk.Hacker-News";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -307,6 +344,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Hacker News/Hacker News.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Hacker News/Preview Content\"";
 				DEVELOPMENT_TEAM = L9295BF929;
@@ -318,6 +357,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.olena.stepaniuk.Hacker-News";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
